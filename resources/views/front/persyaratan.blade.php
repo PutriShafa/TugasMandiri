@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from pixner.net/deskoto/main/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Dec 2021 05:41:50 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,16 @@
 
     <title>Persyaratan</title>
 
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/owl.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/front/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/owl.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('front/assets/css/main.css') }}">
 
-    <link rel="shortcut icon" href="{{ URL::asset('public/front/assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ URL::asset('front/assets/images/favicon.png') }}" type="image/x-icon">
 </head>
 
 <body>
@@ -41,11 +42,11 @@
                 <div class="logo-area">
                     <div class="logo">
                         <a href="{{ URL::to('pemilihan_instansi') }}">
-                            <img src="{{ URL::asset('public/front/assets/images/logo/logo.png') }}" alt="logo">
+                            <img src="{{ URL::asset('front/assets/images/logo/logo.png') }}" alt="logo">
                         </a>
                     </div>
                     <div class="support">
-                        <a href="{{ URL::to('instansi/'.$pelayanan->id_instansi) }}">Kembali</a>
+                        <a href="{{ URL::to('instansi/' . $pelayanan->id_instansi) }}">Kembali</a>
                     </div>
                 </div>
                 <ul class="menu">
@@ -62,7 +63,8 @@
     <!--============= Header Section Ends Here =============-->
 
     <!--============= Banner Section Starts Here =============-->
-    <section class="banner-2 bg_img" data-background="{{ URL::asset('public/front/assets/images/banner/banner-2.jpg') }}" style="margin-top: -50px; min-height: 650px;">
+    <section class="banner-2 bg_img" data-background="{{ URL::asset('front/assets/images/banner/banner-2.jpg') }}"
+        style="margin-top: -50px; min-height: 650px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-md-6 col-lg-12">
@@ -98,18 +100,18 @@
         </div>
     </section>
     <!--============= Banner Section Ends Here =============-->
-    
 
-    <script src="{{ URL::asset('public/front/assets/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/modernizr-3.6.0.min.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/plugins.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/wow.min.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/waypoints.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/nice-select.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/owl.min.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/magnific-popup.min.js') }}"></script>
-    <script src="{{ URL::asset('public/front/assets/js/main.js') }}"></script>
+
+    <script src="{{ URL::asset('front/assets/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/modernizr-3.6.0.min.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/plugins.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/wow.min.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/waypoints.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/nice-select.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/owl.min.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/magnific-popup.min.js') }}"></script>
+    <script src="{{ URL::asset('front/assets/js/main.js') }}"></script>
 </body>
 
 </html>

@@ -10,8 +10,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\FrontController;
 
-Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/', [FrontController::class, 'index']);
+Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate']);
+Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 Route::get('logout', [LoginController::class, 'logout']);
 
 Route::get('pemilihan_instansi', [FrontController::class, 'index']);

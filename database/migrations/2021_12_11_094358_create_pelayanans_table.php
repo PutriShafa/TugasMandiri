@@ -16,6 +16,7 @@ class CreatePelayanansTable extends Migration
         Schema::create('pelayanans', function (Blueprint $table) {
             $table->id();
             $table->string('id_instansi');
+            $table->string('id_loket');
             $table->text('produk_pelayanan');
             $table->text('persyaratan');
             $table->text('prosedur');

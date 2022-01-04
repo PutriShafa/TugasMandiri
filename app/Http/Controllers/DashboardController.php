@@ -9,8 +9,13 @@ use App\Models\User;
 
 class DashboardController extends Controller
 {
-    public function index(){
-        return view('back.index',[
+    public function index()
+    {
+        $idProfile = Auth::user()->id_profile;
+        if ($idProfile == '4') {
+            return redirect()->intended('pemilihan_instansi');
+        }
+        return view('back.index', [
             'title' => 'Dashboard',
         ]);
     }
