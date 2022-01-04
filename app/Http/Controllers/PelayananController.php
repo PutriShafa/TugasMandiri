@@ -11,32 +11,35 @@ use App\Models\Loket;
 
 class PelayananController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $user = Auth::user();
-        $modul = Pelayanan::where(function($a) use ($user) {
+        $modul = Pelayanan::where(function ($a) use ($user) {
             if ($user->id_profile == '2') {
-                $a->where('id_instansi',$user->id_instansi);
+                $a->where('id_instansi', $user->id_instansi);
             }
         })
-        ->latest()
-        ->get();
-        return view('back.module.pelayanan.index',[
+            ->latest()
+            ->get();
+        return view('back.module.pelayanan.index', [
             'title' => 'Pelayanan',
             'modul' => $modul
         ]);
     }
 
-    public function tambah_pelayanan(){
+    public function tambah_pelayanan()
+    {
         $instansi = Instansi::get();
         $loket = Loket::get();
-        return view('back.module.pelayanan.tambah',[
+        return view('back.module.pelayanan.tambah', [
             'title' => 'Pelayanan',
             'instansi' => $instansi,
             'loket' => $loket,
         ]);
     }
 
-    public function tambah(){
+    public function tambah()
+    {
         $user = Auth::user();
         $modul = new Pelayanan;
         if ($user->id_profile == '1') {
@@ -57,7 +60,7 @@ class PelayananController extends Controller
                 'alert' => 1,
                 'message' => 'Berhasil Menambah Pelayanan'
             ]);
-        }else{
+        } else {
             return Redirect::to('pelayanan')->with([
                 'alert' => 0,
                 'message' => 'Gagal Menambah Pelayanan'
@@ -65,11 +68,12 @@ class PelayananController extends Controller
         }
     }
 
-    public function edit_pelayanan(){
+    public function edit_pelayanan()
+    {
         $modul = Pelayanan::find(request('id'));
         $instansi = Instansi::get();
         $loket = Loket::get();
-        return view('back.module.pelayanan.edit',[
+        return view('back.module.pelayanan.edit', [
             'title' => 'Pelayanan',
             'instansi' => $instansi,
             'loket' => $loket,
@@ -77,7 +81,8 @@ class PelayananController extends Controller
         ]);
     }
 
-    public function edit(){
+    public function edit()
+    {
         $user = Auth::user();
         $modul = Pelayanan::find(request('id'));
         if ($user->id_profile == '1') {
@@ -98,7 +103,7 @@ class PelayananController extends Controller
                 'alert' => 1,
                 'message' => 'Berhasil Mengubah Pelayanan'
             ]);
-        }else{
+        } else {
             return Redirect::to('pelayanan')->with([
                 'alert' => 0,
                 'message' => 'Gagal Mengubah Pelayanan'
@@ -106,7 +111,8 @@ class PelayananController extends Controller
         }
     }
 
-    public function hapus(){
+    public function hapus()
+    {
         $modul = Pelayanan::find(request('id'));
 
         if ($modul->delete()) {
@@ -114,7 +120,7 @@ class PelayananController extends Controller
                 'alert' => 1,
                 'message' => 'Berhasil Menghapus Pelayanan'
             ]);
-        }else{
+        } else {
             return Redirect::to('pelayanan')->with([
                 'alert' => 0,
                 'message' => 'Gagal Menghapus Pelayanan'
@@ -122,4 +128,3 @@ class PelayananController extends Controller
         }
     }
 }
-

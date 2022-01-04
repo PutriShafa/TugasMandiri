@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('public/back/assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('back/assets/images/favicon.png') }}">
     <title>Administrator</title>
-    <link href="{{ URL::asset('public/back/dist/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('back/dist/css/style.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             </div>
         </div>
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            style="background:url({{ URL::asset('public/back/assets/images/big/auth-bg.jpg') }}) no-repeat center center;">
+            style="background:url({{ URL::asset('back/assets/images/big/auth-bg.jpg') }}) no-repeat center center;">
             <div class="auth-box row">
                 <div class="col-lg-3 col-md-5 modal-bg-img">
                 </div>
@@ -33,18 +34,26 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="uname">Email</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" id="uname" type="email" placeholder="Email" name="email" required value="{{ old('email') }}">
+                                        <input class="form-control @error('email') is-invalid @enderror" id="uname"
+                                            type="email" placeholder="Email" name="email" required
+                                            value="{{ old('email') }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="pwd">Password</label>
-                                        <input class="form-control" id="pwd" type="password"
-                                            placeholder="password" name="password">
+                                        <input class="form-control" id="pwd" type="password" placeholder="password"
+                                            name="password">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <button type="submit" class="btn btn-block btn-dark">Login</button>
+                                </div>
+                                <div class="col-lg-12 text-center mt-3">
+                                    <a href="{{ url('auth/google') }}">
+                                        <img
+                                            src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
+                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -65,11 +74,11 @@
                 $pesan = 'Success';
             }
         @endphp
-        <div class="toast" data-delay="5000" style="position: absolute; bottom: 0; right: 0; margin-right: 20px;">
+        <div class="toast" data-delay="5000"
+            style="position: absolute; bottom: 0; right: 0; margin-right: 20px;">
             <div class="toast-header">
                 <strong class="mr-auto" style="color: {{ $color }}">{{ $pesan }}</strong>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
-                    aria-label="Close">
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -83,8 +92,7 @@
         <div class="toast" data-delay="5000" style="position: absolute; bottom: 0; right: 0; margin-right: 20px;">
             <div class="toast-header">
                 <strong class="mr-auto" style="color: red">Error !</strong>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
-                    aria-label="Close">
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -94,9 +102,9 @@
         </div>
     @enderror
 
-    <script src="{{ URL::asset('public/back/assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ URL::asset('public/back/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ URL::asset('public/back/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('back/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('back/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ URL::asset('back/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script>
         $(".preloader ").fadeOut();
         $('.toast').toast('show');
